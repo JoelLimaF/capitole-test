@@ -19,11 +19,11 @@ public class Price {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long priceId;
+	private final Long priceId;
 	
 	@ManyToOne
     @JoinColumn(name = "brand_id", referencedColumnName = "brandId")
-    private Brand brand;
+    private final Brand brand;
 
     private final LocalDateTime startDate;
 
@@ -33,7 +33,7 @@ public class Price {
     
     @ManyToOne
     @JoinColumn(name = "product_id", referencedColumnName = "productId")
-    private Product product;
+    private final Product product;
 
     private final Integer priority;
 
@@ -41,6 +41,6 @@ public class Price {
 
     @ManyToOne
     @JoinColumn(name = "currency_id", referencedColumnName = "id")
-    private Currency currency;
+    private final Currency currency;
 
 }

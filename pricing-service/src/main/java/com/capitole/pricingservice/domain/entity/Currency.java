@@ -15,10 +15,10 @@ public class Currency {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private final Long id;
 
     @Column(unique = true)
-    private String code;
+    private final String code;
 
-    private String name;
+    private final String name;
 }
