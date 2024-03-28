@@ -11,12 +11,12 @@ import lombok.Setter;
 @AllArgsConstructor
 public class PriceDTO {
     private Long priceId;
-    private BrandDTO brand;
+    private Long brandId;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private Long priceList;
-    private ProductDTO product;
+    private Long productId;
     private Integer priority;
     private Double price;
-    private CurrencyDTO currency;
+    private String currency;
 }
