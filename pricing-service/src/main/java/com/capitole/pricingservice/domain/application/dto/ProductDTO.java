@@ -1,5 +1,14 @@
 package com.capitole.pricingservice.domain.application.dto;
 
-public class ProductDTO {
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
+@AllArgsConstructor
+public class ProductDTO {
+    private Long productId;
+    private String name;
+    private String description;
 }
