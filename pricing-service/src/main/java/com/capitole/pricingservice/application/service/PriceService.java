@@ -39,7 +39,7 @@ public class PriceService {
     	// seleccionará el precio con la fecha "endDate" más longeva.
     	Price selectedPrice = prices.stream()
     		    .max(Comparator.comparingInt(Price::getPriority)
-    		        .thenComparing(Comparator.comparing(Price::getEndDate).reversed()))
+    		        .thenComparing(Comparator.comparing(Price::getEndDate)))
     		    .orElseThrow(() -> new IllegalStateException("Unexpected error when selecting price")); 	
     	
     	return new PriceResponseDTO(selectedPrice);
