@@ -9,7 +9,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
-@AllArgsConstructor
 public class PriceResponseDTO {
 	
 	private Long productId; // identificador de producto
