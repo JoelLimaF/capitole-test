@@ -28,7 +28,7 @@ public class PriceService {
     	List<Price> prices = priceRepository.findPricesByDateProductAndBrand(applicationDate, productId, brandId);
     	
     	if (prices.isEmpty()) {
-            throw new PriceNotFoundException("No price found for the given date, product ID and brand ID");
+            throw new PriceNotFoundException("Currently, the product " + productId + " from the chain " + brandId + " does not have a price available");
         }
     	
         return selectFinalPrice(prices);
