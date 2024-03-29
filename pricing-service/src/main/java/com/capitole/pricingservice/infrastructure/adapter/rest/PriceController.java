@@ -18,11 +18,24 @@ public class PriceController {
 
 	private final PriceService priceService;
 
+	/**
+     * Constructs a new PriceController with the given PriceService.
+     *
+     * @param priceService the service to use for price management
+     */
     @Autowired
     public PriceController(PriceService priceService) {
         this.priceService = priceService;
     }
     
+    /**
+     * Endpoint to get the price of a product at a specific date for a specific brand.
+     *
+     * @param requestDate the date for which to get the price
+     * @param productId the ID of the product
+     * @param brandId the ID of the brand
+     * @return a ResponseEntity containing the price of the product for the given brand at the given date
+     */
     @GetMapping("/price")
     public ResponseEntity<PriceResponseDTO> getPrice(
     		@NonNull @RequestParam("requestDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) final LocalDateTime requestDate,

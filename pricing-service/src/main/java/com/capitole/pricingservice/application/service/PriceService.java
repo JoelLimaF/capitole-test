@@ -12,17 +12,37 @@ import com.capitole.pricingservice.application.exception.PriceNotFoundException;
 import com.capitole.pricingservice.domain.entity.Price;
 import com.capitole.pricingservice.domain.repository.PriceRepository;
 
+/**
+ * Service class for managing product prices.
+ */
 @Service
 public class PriceService {
 
     private final PriceRepository priceRepository;
 
+    /**
+     * Constructs a new PriceService with the given PriceRepository.
+     *
+     * @param priceRepository the repository to use for price data access
+     */
     @Autowired
     public PriceService(PriceRepository priceRepository) {
         this.priceRepository = priceRepository;
     }
     
-    public PriceResponseDTO getPrice(final LocalDateTime applicationDate, final Long productId, final Long brandId) {
+    /**
+     * Gets the price of a product at a specific date for a specific brand.
+     *
+     * @param applicationDate the date for which to get the price
+     * @param productId the ID of the product
+     * @param brandId the ID of the brand
+     * @return the price of the product for the given brand at the given date
+     * @throws PriceNotFoundException if no prices are available for the given product and brand at the application date
+     */
+    public PriceResponseDTO getPrice(
+    		final LocalDateTime applicationDate, 
+    		final Long productId, 
+    		final Long brandId) {
 
     	List<Price> prices = priceRepository.findPricesByDateProductAndBrand(applicationDate, productId, brandId);
     	
@@ -33,10 +53,17 @@ public class PriceService {
         return selectFinalPrice(prices);
     }    
     
+    /**
+     * Selects the price with the highest priority. In case there are 2 or more dates with the same "maximum" priority,
+     * it will select the price with the longest "endDate".
+     *
+     * @param prices the list of prices from which the final price will be selected
+     * @return the selected final price, wrapped in a PriceResponseDTO object
+     * @throws IllegalStateException if an unexpected error occurs when selecting the price
+     */
+
     private PriceResponseDTO selectFinalPrice(List<Price> prices) {
     	
-    	// Selecciona el precio con la prioridad más alta. En caso de existir 2 o más fechas con la misma prioridad "máxima",
-    	// seleccionará el precio con la fecha "endDate" más longeva.
     	Price selectedPrice = prices.stream()
     		    .max(Comparator.comparingInt(Price::getPriority)
     		        .thenComparing(Comparator.comparing(Price::getEndDate)))

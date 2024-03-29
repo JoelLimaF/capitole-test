@@ -5,19 +5,49 @@ import java.time.LocalDateTime;
 
 import com.capitole.pricingservice.domain.entity.Price;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+/**
+ * Data Transfer Object for sending price information in responses.
+ */
 @Getter
 public class PriceResponseDTO {
 	
-	private Long productId; // identificador de producto
-	private Long brandId; // identificador de cadena
-	private Long priceList; // tarifa a aplicar
-	private LocalDateTime startDate; // fechas de aplicación
-    private LocalDateTime endDate; // fechas de aplicación
-    private BigDecimal finalPrice; // precio final a aplicar
+    /**
+     * The unique identifier of the product.
+     */
+	private Long productId;
+
+    /**
+     * The unique identifier of the brand.
+     */
+	private Long brandId;
+
+    /**
+     * The price list identifier.
+     */
+	private Long priceList;
+
+    /**
+     * The start date of the price validity.
+     */
+	private LocalDateTime startDate;
+
+    /**
+     * The end date of the price validity.
+     */
+    private LocalDateTime endDate;
+
+    /**
+     * The final price to apply.
+     */
+    private BigDecimal finalPrice;
     
+    /**
+     * Constructs a new PriceResponseDTO with the given Price.
+     *
+     * @param price the Price to use for creating the PriceResponseDTO
+     */
     public PriceResponseDTO(Price price) {
         this.productId = price.getProduct().getId();
         this.brandId = price.getBrand().getId();
@@ -26,5 +56,5 @@ public class PriceResponseDTO {
         this.endDate = price.getEndDate();
         this.finalPrice = price.getPrice();
     }
-
 }
+

@@ -10,9 +10,20 @@ import org.springframework.stereotype.Repository;
 
 import com.capitole.pricingservice.domain.entity.Price;
 
+/**
+ * Repository interface for managing Price entities.
+ */
 @Repository
 public interface PriceRepository extends JpaRepository<Price, Long>{
 
+	/**
+     * Finds prices by application date, product ID, and brand ID.
+     *
+     * @param applicationDate the date for which to find the prices
+     * @param productId the ID of the product
+     * @param brandId the ID of the brand
+     * @return a list of prices that match the given parameters
+     */
 	@Query("SELECT p FROM Price p " +
 	        "WHERE :applicationDate BETWEEN p.startDate AND p.endDate " +
 	        "AND p.product.id = :productId " +
