@@ -1,4 +1,4 @@
-package com.capitole.pricingservice.service;
+package com.capitole.pricingservice.application.service;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -8,9 +8,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.capitole.pricingservice.domain.application.dto.PriceResponseDTO;
+import com.capitole.pricingservice.application.dto.PriceResponseDTO;
+import com.capitole.pricingservice.application.exception.PriceNotFoundException;
 import com.capitole.pricingservice.domain.entity.Price;
-import com.capitole.pricingservice.domain.exception.PriceNotFoundException;
 import com.capitole.pricingservice.domain.repository.PriceRepository;
 
 @Service

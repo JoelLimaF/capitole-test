@@ -1,4 +1,4 @@
-package com.capitole.pricingservice.domain.application.dto;
+package com.capitole.pricingservice.application.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

@@ -1,4 +1,4 @@
-package com.capitole.pricingservice.domain.exception;
+package com.capitole.pricingservice.application.exception;
 
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package com.capitole.pricingservice.domain.adapter.rest;
+package com.capitole.pricingservice.infrastructure.adapter.rest;
 
 import java.time.LocalDateTime;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.capitole.pricingservice.domain.application.dto.PriceResponseDTO;
-import com.capitole.pricingservice.service.PriceService;
+import com.capitole.pricingservice.application.dto.PriceResponseDTO;
+import com.capitole.pricingservice.application.service.PriceService;
 
 @RestController
 public class PriceController {
