@@ -1,6 +1,5 @@
 package com.capitole.pricingservice.application.service;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.List;
@@ -41,18 +40,9 @@ public class PriceService {
     	Price selectedPrice = prices.stream()
     		    .max(Comparator.comparingInt(Price::getPriority)
     		        .thenComparing(Comparator.comparing(Price::getEndDate).reversed()))
-    		    .orElseThrow(() -> new IllegalStateException("Unexpected error when selecting price"));
+    		    .orElseThrow(() -> new IllegalStateException("Unexpected error when selecting price")); 	
     	
-    	
-    	Long productId = selectedPrice.getProduct().getId();
-    	Long brandId = selectedPrice.getBrand().getId();
-    	Long priceList = selectedPrice.getPriceList();
-    	LocalDateTime startDate = selectedPrice.getStartDate();
-    	LocalDateTime endDate = selectedPrice.getEndDate();
-    	BigDecimal finalPrice = selectedPrice.getPrice();
-    	
-    	
-    	return new PriceResponseDTO(productId, brandId, priceList, startDate, endDate, finalPrice);
+    	return new PriceResponseDTO(selectedPrice);
     }
        
 }
