@@ -19,10 +19,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import com.capitole.pricingservice.application.service.PriceService;
 
 
-
-
-
-
 @SpringBootTest
 @AutoConfigureMockMvc
 public class PriceControllerTest {
