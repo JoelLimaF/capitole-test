@@ -12,27 +12,44 @@ databaseChangeLog:
                   autoIncrement: true
                   constraints:
                     primaryKey: true
+                    nullable: false
               - column:
                   name: brand
                   type: bigint
+                  constraints:
+                    nullable: false
               - column:
                   name: start_date
                   type: timestamp
+                  constraints:
+                    nullable: false
               - column:
                   name: end_date
                   type: timestamp
+                  constraints:
+                    nullable: false
               - column:
                   name: price_list
                   type: bigint
+                  constraints:
+                    nullable: false
               - column:
                   name: product
                   type: bigint
+                  constraints:
+                    nullable: false
               - column:
                   name: priority
                   type: int
+                  constraints:
+                    nullable: false
               - column:
                   name: price
                   type: decimal(10,2)
+                  constraints:
+                    nullable: false
               - column:
                   name: currency
                   type: bigint
+                  constraints:
+                    nullable: false

@@ -9,9 +9,16 @@ databaseChangeLog:
               - column:
                   name: id
                   type: bigint
+                  constraints:
+                    nullable: false
               - column:
                   name: code
                   type: varchar(3)
+                  constraints:
+                    nullable: false
+                    unique: true
               - column:
                   name: name
                   type: varchar(25)
+                  constraints:
+                    nullable: false

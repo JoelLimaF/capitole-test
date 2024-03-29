@@ -7,17 +7,17 @@
 
     <changeSet id="currency_data" author="joel">
         <sql>
-            INSERT INTO Currency (code, name)
-            VALUES ('EUR', 'Euro');
+            INSERT INTO Currency (id, code, name)
+            VALUES (1, 'EUR', 'Euro');
 
-            INSERT INTO Currency (code, name)
-            VALUES ('GBP', 'Pound sterling');
+            INSERT INTO Currency (id, code, name)
+            VALUES (2, 'GBP', 'Pound sterling');
 
-            INSERT INTO Currency (code, name)
-            VALUES ('USD', 'United States dollar');
+            INSERT INTO Currency (id, code, name)
+            VALUES (3, 'USD', 'United States dollar');
 
-            INSERT INTO Currency (code, name)
-            VALUES ('JPY', 'Japanese yen');
+            INSERT INTO Currency (id, code, name)
+            VALUES (4, 'JPY', 'Japanese yen');
         </sql>
     </changeSet>
 
