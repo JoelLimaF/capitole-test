@@ -7,7 +7,7 @@
 
     <changeSet id="product_data" author="joel">
         <sql>
-            INSERT INTO Product (productId, name, description)
+            INSERT INTO Product (id, name, description)
             VALUES ('35455', 'PANTALÓN TIRO ALTO', 'Pantalón de tiro alto con tapetas delanteras. Bolsillos frontales. Cierre delantero con cremallera, botón interior y gancho.');
         </sql>
     </changeSet>

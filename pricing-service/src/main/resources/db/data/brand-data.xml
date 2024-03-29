@@ -7,7 +7,7 @@
 
     <changeSet id="brand_data" author="joel">
         <sql>
-            INSERT INTO Brand (brandId, name)
+            INSERT INTO Brand (id, name)
             VALUES ('1', 'Zara');
         </sql>
     </changeSet>

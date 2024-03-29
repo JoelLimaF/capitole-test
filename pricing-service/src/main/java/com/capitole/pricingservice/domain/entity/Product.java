@@ -1,21 +1,27 @@
 package com.capitole.pricingservice.domain.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@NoArgsConstructor
 @Table(name = "Product")
 public class Product {
 
-    @Id
-    private final Long productId;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    private final String name;
+	@Column(name = "name")
+    private String name;
 
-    private final String description;
+	@Column(name = "description")
+    private String description;
 }

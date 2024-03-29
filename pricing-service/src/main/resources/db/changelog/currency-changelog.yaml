@@ -7,6 +7,9 @@ databaseChangeLog:
             tableName: currency
             columns:
               - column:
+                  name: id
+                  type: bigint
+              - column:
                   name: code
                   type: varchar(3)
               - column:

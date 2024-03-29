@@ -7,7 +7,7 @@ databaseChangeLog:
             tableName: Product
             columns:
               - column:
-                  name: productId
+                  name: id
                   type: bigint
               - column:
                   name: name

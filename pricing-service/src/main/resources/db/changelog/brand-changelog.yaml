@@ -7,7 +7,7 @@ databaseChangeLog:
             tableName: Brand
             columns:
               - column:
-                  name: brandId
+                  name: id
                   type: bigint
               - column:
                   name: name

@@ -7,13 +7,13 @@ databaseChangeLog:
             tableName: Prices
             columns:
               - column:
-                  name: priceId
+                  name: id
                   type: bigint
                   autoIncrement: true
                   constraints:
                     primaryKey: true
               - column:
-                  name: brand_id
+                  name: brand
                   type: bigint
               - column:
                   name: start_date
@@ -25,7 +25,7 @@ databaseChangeLog:
                   name: price_list
                   type: bigint
               - column:
-                  name: product_id
+                  name: product
                   type: bigint
               - column:
                   name: priority
@@ -34,5 +34,5 @@ databaseChangeLog:
                   name: price
                   type: decimal(10,2)
               - column:
-                  name: currency_id
+                  name: currency
                   type: bigint
