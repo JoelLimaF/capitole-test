@@ -24,9 +24,9 @@ public class PriceController {
     
     @GetMapping("/price")
     public ResponseEntity<PriceResponseDTO> getPrice(
-            @RequestParam("requestDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime requestDate,
-            @RequestParam("productId") Long productId,
-            @RequestParam("brandId") Long brandId
+            @RequestParam("requestDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) final LocalDateTime requestDate,
+            @RequestParam("productId") final Long productId,
+            @RequestParam("brandId") final Long brandId
     ) {
         return ResponseEntity.ok(priceService.getPrice(requestDate, productId, brandId));
     }
