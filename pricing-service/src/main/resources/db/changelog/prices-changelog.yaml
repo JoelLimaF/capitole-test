@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: prices
+      author: joel
+      changes:
+        - createTable:
+            tableName: Prices
+            columns:
+              - column:
+                  name: priceId
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: brand_id
+                  type: bigint
+              - column:
+                  name: start_date
+                  type: timestamp
+              - column:
+                  name: end_date
+                  type: timestamp
+              - column:
+                  name: price_list
+                  type: bigint
+              - column:
+                  name: product_id
+                  type: bigint
+              - column:
+                  name: priority
+                  type: int
+              - column:
+                  name: price
+                  type: decimal(10,2)
+              - column:
+                  name: currency_id
+                  type: bigint

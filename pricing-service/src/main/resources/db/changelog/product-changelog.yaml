@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: product
+      author: joel
+      changes:
+        - createTable:
+            tableName: Product
+            columns:
+              - column:
+                  name: productId
+                  type: bigint
+              - column:
+                  name: name
+                  type: varchar(25)
+              - column:
+                  name: description
+                  type: varchar(150)

@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/prices-changelog.yaml
+  - include:
+      file: classpath:db/changelog/brand-changelog.yaml
+  - include:
+      file: classpath:db/changelog/currency-changelog.yaml
+  - include:
+      file: classpath:db/changelog/product-changelog.yaml
+  - include:
+      file: classpath:db/data/prices-data.xml
+  - include:
+      file: classpath:db/data/currency-data.xml
+  - include:
+      file: classpath:db/data/brand-data.xml
+  - include:
+      file: classpath:db/data/product-data.xml

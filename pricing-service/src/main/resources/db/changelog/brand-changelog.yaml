@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: brand
+      author: joel
+      changes:
+        - createTable:
+            tableName: Brand
+            columns:
+              - column:
+                  name: brandId
+                  type: bigint
+              - column:
+                  name: name
+                  type: varchar(25)

@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: currency
+      author: joel
+      changes:
+        - createTable:
+            tableName: currency
+            columns:
+              - column:
+                  name: code
+                  type: varchar(3)
+              - column:
+                  name: name
+                  type: varchar(25)
