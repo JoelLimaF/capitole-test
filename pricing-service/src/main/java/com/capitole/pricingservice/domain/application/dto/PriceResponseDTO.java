@@ -1,5 +1,6 @@
 package com.capitole.pricingservice.domain.application.dto;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
@@ -14,6 +15,6 @@ public class PriceResponseDTO {
 	private Long priceList; // tarifa a aplicar
 	private LocalDateTime startDate; // fechas de aplicación
     private LocalDateTime endDate; // fechas de aplicación
-    private Double finalPrice; // precio final a aplicar
+    private BigDecimal finalPrice; // precio final a aplicar
 
 }
